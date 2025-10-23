@@ -10,7 +10,7 @@ on:
         default: 42
 
 jobs:
-  main:
+  callee:
     runs-on: ubuntu-latest
 
     steps:

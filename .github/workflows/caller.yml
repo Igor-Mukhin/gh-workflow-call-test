@@ -8,8 +8,9 @@ on:
         required: false
         type: number
         default: 42
+
 jobs:
-  main:
+  caller:
     uses: ./.github/workflows/callee.yml
     with:
       input1: ${{ inputs.input1 }}
