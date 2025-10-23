@@ -1,0 +1,10 @@
+name: Caller
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call:
+    uses: ./.github/workflows/callee.yml
+    with:
+      input1: 5
