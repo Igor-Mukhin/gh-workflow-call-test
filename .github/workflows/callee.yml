@@ -3,7 +3,7 @@ name: Callee
 on:
   workflow_call:
     inputs:
-      input-1:
+      input1:
         description: "A number input"
         required: false
         type: number
@@ -16,4 +16,4 @@ jobs:
     steps:
       - name: Use the input
         run: |
-          echo "The input value is ${{ inputs.input-1 }}"
+          echo "The input value is ${{ inputs.input1 }}"

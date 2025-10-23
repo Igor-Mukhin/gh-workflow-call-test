@@ -3,7 +3,7 @@ name: Caller
 on:
   workflow_dispatch:
     inputs:
-      input-1:
+      input1:
         description: "A number input"
         required: false
         type: number
@@ -12,4 +12,4 @@ jobs:
   main:
     uses: ./.github/workflows/callee.yml
     with:
-      input-1: ${{ inputs.input-1 }}
+      input1: ${{ inputs.input1 }}
