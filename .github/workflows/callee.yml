@@ -3,17 +3,17 @@ name: Callee
 on:
   workflow_call:
     inputs:
-      input1:
+      input-1:
         description: "A number input"
-        required: true
+        required: false
         type: number
         default: 42
 
 jobs:
-  callee-job:
+  main:
     runs-on: ubuntu-latest
 
     steps:
       - name: Use the input
         run: |
-          echo "The input value is ${{ inputs.input1 }}"
+          echo "The input value is ${{ inputs.input-1 }}"
