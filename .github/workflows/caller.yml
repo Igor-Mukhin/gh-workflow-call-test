@@ -10,7 +10,12 @@ on:
         default: 42
 
 jobs:
-  caller:
+  caller1:
     uses: ./.github/workflows/callee.yml
     with:
       input1: 12
+
+  caller2:
+    uses: ./.github/workflows/callee.yml
+    with:
+      input1: ${{ inputs.input1 }}
