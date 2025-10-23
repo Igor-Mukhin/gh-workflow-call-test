@@ -13,4 +13,4 @@ jobs:
   caller:
     uses: ./.github/workflows/callee.yml
     with:
-      input2: ${{ inputs.input1 }}
+      input1: ${{ inputs.input1 }}
