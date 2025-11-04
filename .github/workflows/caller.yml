@@ -17,4 +17,4 @@ jobs:
   caller2:
     uses: ./.github/workflows/callee.yml
     with:
-      input1: ${{ fromJSON(inputs.input1) }}
+      input1: ${{ fromJSON(inputs.input1 || 55) }}
