@@ -5,9 +5,8 @@ on:
     inputs:
       input1:
         description: "A number input"
-        required: true
+        required: false
         type: number
-        default: 42
 
 jobs:
   caller1:
