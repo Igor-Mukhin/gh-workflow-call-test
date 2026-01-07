@@ -28,6 +28,7 @@ jobs:
   second:
     runs-on: ubuntu-latest
     needs: first
+    if: always() && (needs.first.result == 'success' || needs.first.result == 'skipped')
     steps:
         - name: Second Step
           run: echo "This is the second job, which we want to run if the first job is skipped or succeeded."
