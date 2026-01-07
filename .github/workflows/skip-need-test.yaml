@@ -2,10 +2,10 @@ name: Skip Need Test Workflow
 on:
   workflow_dispatch:
     inputs:
-      skip-first:
-        default: false
+      run-first:
+        default: true
         type: boolean
-        description: "Skip the first job"
+        description: "Run the first job"
       fail-first:
         default: false
         type: boolean
@@ -15,7 +15,7 @@ on:
 jobs:
   first:
     runs-on: ubuntu-latest
-    if: inputs.skip-first != true
+    if: inputs.run-first
     steps:
         - name: First Step
           run: |
