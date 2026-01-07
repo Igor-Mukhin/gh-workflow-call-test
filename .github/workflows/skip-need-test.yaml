@@ -1,0 +1,33 @@
+name: Skip Need Test Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      skip-first:
+        default: false
+        type: boolean
+        description: "Skip the first job"
+      fail-first:
+        default: false
+        type: boolean
+        description: "Fail the first job"
+
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    if: inputs.skip-first != 'true'
+    steps:
+        - name: First Step
+          run: |
+            echo "This is the first job."
+            if [ "${{ inputs.fail-first }}" = "true" ]; then
+                echo "Failing the first job as requested."
+                exit 1
+            fi
+
+  second:
+    runs-on: ubuntu-latest
+    needs: first
+    steps:
+        - name: Second Step
+          run: echo "This is the second job, which we want to run if the first job is skipped or succeeded."
