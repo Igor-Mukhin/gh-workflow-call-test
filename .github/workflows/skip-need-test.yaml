@@ -20,7 +20,6 @@ jobs:
         - name: First Step
           run: |
             echo "This is the first job."
-            echo "Skip First: ${{ inputs.skip-first }}"
             if [ "${{ inputs.fail-first }}" = "true" ]; then
                 echo "Failing the first job as requested."
                 exit 1
