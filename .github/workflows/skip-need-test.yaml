@@ -15,7 +15,7 @@ on:
 jobs:
   first:
     runs-on: ubuntu-latest
-    if: inputs.skip-first != 'true'
+    if: inputs.skip-first != true
     steps:
         - name: First Step
           run: |
